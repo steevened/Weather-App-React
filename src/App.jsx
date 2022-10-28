@@ -45,14 +45,20 @@ function App() {
       </h1>
       <h2>
         {celsius
-          ? `${Math.floor(weather.main?.temp - 273.15)} °C`
-          : `${Math.floor(((weather.main?.temp - 273.15) * 9) / 5 + 32)} °F`}
-        {/* {weather.main?.temp} °K {weather.weather?.[0].description} */}
+          ? `${(weather.main?.temp - 273.15).toFixed(1)}°c`
+          : `${(((weather.main?.temp - 273.15) * 9) / 5 + 32).toFixed(
+              1
+            )}°f`}{' '}
+        {weather.weather?.[0].description}
       </h2>
       <h3>{`${hour}:${minutes} ${hour > 12 ? 'PM' : 'AM'}`}</h3>
       <p>
-        Feels like: {weather.main?.feels_like}° Low: {weather.main?.temp_min}°
-        High: {weather.main?.temp_max}
+        Feels like:{' '}
+        {celsius
+          ? `${(weather.main?.temp - 273.15).toFixed(1)}°c`
+          : `${(((weather.main?.temp - 273.15) * 9) / 5 + 32).toFixed(1)}°f`}
+        {/* Feels like: {weather.main?.feels_like}° Low: {weather.main?.temp_min}° */}
+        {/* High: {weather.main?.temp_max} */}
       </p>
       <p>Wind: {weather.wind?.speed} km/h</p>
       <p>Clouds: {weather.clouds?.all}%</p>
