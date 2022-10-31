@@ -42,7 +42,7 @@ function App() {
         break
     }
 
-    document.body.style = `background-image: url(src/assets/${background})`
+    document.body.style = `background-image: url('./src/assets/${background}')`
   }, [weather])
 
   // console.log(weather.weather?.[0])
