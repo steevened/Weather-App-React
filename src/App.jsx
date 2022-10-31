@@ -32,17 +32,6 @@ function App() {
     navigator.geolocation.getCurrentPosition(success)
   }, [])
 
-  // const changeBackground = () => {
-  //   switch (weather.weather?.[0].icon) {
-  //     case ('01d', '02d', '03d', '04d', '09d', '010d', '011d', '013d', '050d'):
-  //       setBackground('sun2.svg')
-  //       break
-  //     default:
-  //       setBackground('sun.svg')
-  //       break
-  //   }
-  // }
-
   useEffect(() => {
     switch (weather.weather?.[0].icon) {
       case ('01d', '02d', '03d', '04d', '09d', '010d', '011d', '013d', '050d'):
@@ -53,7 +42,7 @@ function App() {
         break
     }
 
-    document.body.style = `background-image: url(./src/assets/${background})`
+    document.body.style = `background-image: url(./assets/${background})`
   }, [weather])
 
   // console.log(weather.weather?.[0])
