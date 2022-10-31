@@ -41,7 +41,7 @@ function App() {
         icon === '10d' ||
         icon === '13d'
       ) {
-        return 'sun.svg'
+        return 'sun.png'
       } else if (
         icon === '02d' ||
         icon === '04d' ||
