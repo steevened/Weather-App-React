@@ -48,14 +48,14 @@ function App() {
         icon === '10d' ||
         icon === '13d'
       ) {
-        return 'src/assets/sun.svg'
+        return 'https://i.ibb.co/vsVyMf3/sun.webp'
       } else if (
         icon === '02d' ||
         icon === '04d' ||
         icon === '11d' ||
         icon === '50d'
       ) {
-        return 'src/assets/sun2.svg'
+        return 'https://i.ibb.co/TrXGZGG/sun2.webp'
       } else if (
         icon === '01d' ||
         icon === '03n' ||
@@ -63,14 +63,14 @@ function App() {
         icon === '10n' ||
         icon === '13n'
       ) {
-        return 'src/assets/night.svg'
+        return 'https://i.ibb.co/k8G8H4Q/night2.webp'
       } else if (
         icon === '02n' ||
         icon === '04n' ||
         icon === '11n' ||
         icon === '50n'
       ) {
-        return 'src/assets/night2.svg'
+        return 'https://i.ibb.co/DgNc8WG/night.webp'
       }
     }
 
