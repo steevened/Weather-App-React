@@ -14,7 +14,7 @@ function App() {
   //to work with the weather api
   const [weather, setWeather] = useState({})
   const [celsius, setCelsius] = useState(true)
-  const [background, setBackground] = useState('night.svg')
+  const [background, setBackground] = useState('night.png')
 
   useEffect(() => {
     const success = (pos) => {
@@ -35,14 +35,14 @@ function App() {
   useEffect(() => {
     switch (weather.weather?.[0].icon) {
       case ('01d', '02d', '03d', '04d', '09d', '010d', '011d', '013d', '050d'):
-        setBackground('sun2.svg')
+        setBackground('night.png')
         break
       default:
-        setBackground('sun.svg')
+        setBackground('night.png')
         break
     }
 
-    document.body.style = `background-image: url(./assets/${background})`
+    document.body.style = `background-image: url(src/assets/${background})`
   }, [weather])
 
   // console.log(weather.weather?.[0])
