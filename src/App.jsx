@@ -70,7 +70,7 @@ function App() {
         icon === '11n' ||
         icon === '50n'
       ) {
-        return 'src/assets/night2.png'
+        return 'src/assets/night2.svg'
       }
     }
 
