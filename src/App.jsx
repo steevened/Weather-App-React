@@ -1,24 +1,26 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 import { useEffect } from 'react'
 import axios from 'axios'
+import Location from './components/Location'
+
+import Secondary from './components/Secondary'
+import ChangeDegrees from './components/ChangeDegrees'
+import Mountains from './components/Mountains'
+import Hour from './components/Hour'
+import Background from './components/Background'
+import back from './assets/back.svg'
+import Card from './components/Card'
+import Weather from './components/Weather'
+import Degrees from './components/Degrees'
 
 function App() {
-  //to get the hour
-  const date = new Date()
-  const hour = date.getHours().toLocaleString()
-  const minutes = date.getMinutes().toLocaleString()
   // console.log(`${hour}:${minutes}`)
 
   //to work with the weather api
   const [weather, setWeather] = useState({})
 
   const [celsius, setCelsius] = useState(true)
-
-  // const toCelsius = () => {
-  //   const celsius =
-  // }
 
   useEffect(() => {
     const success = (pos) => {
@@ -39,34 +41,22 @@ function App() {
   console.log(weather)
 
   return (
-    <>
-      <h1>
-        {weather.name}, {weather.sys?.country}
-      </h1>
-      <h2>
-        {celsius
-          ? `${(weather.main?.temp - 273.15).toFixed(1)}°c`
-          : `${(((weather.main?.temp - 273.15) * 9) / 5 + 32).toFixed(
-              1
-            )}°f`}{' '}
-        {weather.weather?.[0].description}
-      </h2>
-      <h3>{`${hour}:${minutes} ${hour > 12 ? 'PM' : 'AM'}`}</h3>
-      <p>
-        Feels like:{' '}
-        {celsius
-          ? `${(weather.main?.temp - 273.15).toFixed(1)}°c`
-          : `${(((weather.main?.temp - 273.15) * 9) / 5 + 32).toFixed(1)}°f`}
-        {/* Feels like: {weather.main?.feels_like}° Low: {weather.main?.temp_min}° */}
-        {/* High: {weather.main?.temp_max} */}
-      </p>
-      <p>Wind: {weather.wind?.speed} km/h</p>
-      <p>Clouds: {weather.clouds?.all}%</p>
-      <p>Humidity: {weather.main?.humidity}%</p>
-      <button onClick={() => setCelsius(!celsius)}>
-        Change to {celsius ? '°F' : '°C'}
-      </button>
-    </>
+    <div className='app'>
+      <Hour />
+      <div className='glass'>
+        <Card>
+          <div className='main'>
+            <Location weather={weather} celsius={celsius} />
+            <Weather weather={weather} />
+            <Degrees weather={weather} celsius={celsius} />
+          </div>
+          <div className='secondary'>
+            <Secondary weather={weather} />
+          </div>
+        </Card>
+      </div>
+      <div className='moon'></div>
+    </div>
   )
 }
 

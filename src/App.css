@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  /*1 rem 10px*/
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  background-image: url(./assets/nightSnow.svg);
+  background-size: cover;
+  color: #fff;
+}
+
+li {
+  list-style: none;
+}
+
+.app {
+  height: 100vh;
+  position: relative;
+}
+
+.moon {
+  width: 10rem;
+  height: 10rem;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 3px 3px 20px rgba(255, 255, 255, 0.3),
+    inset -34px -18px 45px -17px rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 20%;
+  left: 0;
+  animation-name: hor, ver;
+  animation-duration: 200s, 200s;
+  animation-timing-function: ease-in-out, linear;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running running;
+  animation-delay: 0ms;
+  /* animation: hor 5s ease infinite; */
+  /* animation: ver 5s ease infinite; */
+  overflow: hidden;
+}
+
+@keyframes hor {
+  0% {
+    transform: translateX(-1vw);
+  }
+  100% {
+    transform: translateX(101vw);
+  }
+}
+@keyframes ver {
+  0% {
+    top: 10%;
+  }
+  50% {
+    top: -10px;
+  }
+  50% {
+    top: 10px;
+  }
+}
+
+.date {
+  position: absolute;
+  font-size: 26px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 17.5%;
+  text-align: center;
+}
+
+.glass {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  height: 30rem;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 66%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.3rem;
+  flex-basis: 50%;
+  /* border: 2px solid blue; */
+}
+
+.location h1 {
+  font-size: 3.5rem;
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  height: 33px;
+  width: 400px;
+}
+
+.weather h2 {
+  font-size: 3rem;
+}
+.weather img {
+  width: 8rem;
+}
+
+.degrees {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 29rem;
+}
+
+.degrees ul {
+  font-size: 1.8rem;
+}
+
+.degrees h2 {
+  font-size: 5.5rem;
+}
+.degrees .corf {
+  font-size: 2.5rem;
+}
+
+.secondary {
+  font-size: 2rem;
+  text-align: end;
+  /* border: 2px solid green; */
+  flex-basis: 50%;
+}
+.secondary ul li {
+  line-height: 6.2rem;
+}
+
+.secondary ul li img {
+  width: 2.5rem;
+  margin-right: 1rem;
+}
