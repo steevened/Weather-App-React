@@ -14,7 +14,7 @@ function App() {
   //to work with the weather api
   const [weather, setWeather] = useState({})
   const [celsius, setCelsius] = useState(true)
-  const [background, setBackground] = useState()
+  const [background, setBackground] = useState('night.svg')
 
   useEffect(() => {
     const success = (pos) => {
@@ -53,7 +53,7 @@ function App() {
         break
     }
 
-    document.body.style = `background-image: url(./assets/${background})`
+    document.body.style = `background-image: url(./src/assets/${background})`
   }, [weather])
 
   // console.log(weather.weather?.[0])
