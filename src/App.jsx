@@ -5,19 +5,14 @@ import axios from 'axios'
 import Location from './components/Location'
 import Secondary from './components/Secondary'
 import ChangeDegrees from './components/ChangeDegrees'
-import Mountains from './components/Mountains'
 import Hour from './components/Hour'
-
 import Card from './components/Card'
 import Weather from './components/Weather'
 import Degrees from './components/Degrees'
 
 function App() {
-  // console.log(`${hour}:${minutes}`)
-
   //to work with the weather api
   const [weather, setWeather] = useState({})
-
   const [celsius, setCelsius] = useState(true)
 
   useEffect(() => {
@@ -36,7 +31,23 @@ function App() {
     navigator.geolocation.getCurrentPosition(success)
   }, [])
 
-  console.log(weather)
+  const changeBackground = (icon) => {
+    switch (icon) {
+      case ('01d', '02d', '03d', '04d', '09d', '010d', '011d', '013d', '050d'):
+        return 'sun2.svg'
+        break
+      default:
+        return 'sun.svg'
+        break
+    }
+  }
+
+  // document.body.style = 'background-image: url(src/assets/night2.svg)'
+  document.body.style = `background-image: url(src/assets/${changeBackground(
+    weather.weather?.[0].icon
+  )})`
+
+  console.log(weather.weather?.[0])
 
   return (
     <div className='app'>
