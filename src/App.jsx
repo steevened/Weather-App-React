@@ -68,7 +68,7 @@ function App() {
     }
 
     setBackground(set(weather.weather?.[0].icon))
-
+    console.log(background)
     document.body.style = `background-image: url(./src/assets/${background})`
   }, [weather])
 
