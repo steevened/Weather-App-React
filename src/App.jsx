@@ -41,14 +41,14 @@ function App() {
         icon === '10d' ||
         icon === '13d'
       ) {
-        return 'https://i.ibb.co/G2TbMq3/sun.png'
+        return 'https://i.ibb.co/vsVyMf3/sun.webp'
       } else if (
         icon === '02d' ||
         icon === '04d' ||
         icon === '11d' ||
         icon === '50d'
       ) {
-        return 'https://i.ibb.co/dc86t3s/sun2.png'
+        return 'https://i.ibb.co/TrXGZGG/sun2.webp'
       } else if (
         icon === '01d' ||
         icon === '03n' ||
@@ -56,14 +56,14 @@ function App() {
         icon === '10n' ||
         icon === '13n'
       ) {
-        return 'https://i.ibb.co/mJGMxrY/night.png'
+        return 'https://i.ibb.co/k8G8H4Q/night2.webp'
       } else if (
         icon === '02n' ||
         icon === '04n' ||
         icon === '11n' ||
         icon === '50n'
       ) {
-        return 'https://i.ibb.co/jw5jt73/night2.png'
+        return 'https://i.ibb.co/DgNc8WG/night.webp'
       }
     }
 
@@ -75,7 +75,7 @@ function App() {
     setBackground(set(weather.weather?.[0].icon))
 
     document.body.style = `background-image: url(${background})`
-  }, [celsius])
+  }, [weather])
 
   // console.log(weather.weather?.[0])
 
