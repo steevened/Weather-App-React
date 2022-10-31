@@ -15,6 +15,7 @@ function App() {
   const [weather, setWeather] = useState({})
   const [celsius, setCelsius] = useState(true)
   const [background, setBackground] = useState()
+  const [charged, setCharged] = useState(false)
 
   useEffect(() => {
     const success = (pos) => {
@@ -31,6 +32,10 @@ function App() {
 
     navigator.geolocation.getCurrentPosition(success)
   }, [])
+
+  useEffect(() => {
+    setCharged(!charged)
+  }, [weather])
 
   useEffect(() => {
     const set = (icon) => {
@@ -67,15 +72,10 @@ function App() {
       }
     }
 
-    //     https://ibb.co/2M6pJXc
-    // https://ibb.co/4W75QwD
-    // https://ibb.co/59bvkzX
-    // https://ibb.co/k81WDt6
-
     setBackground(set(weather.weather?.[0].icon))
 
     document.body.style = `background-image: url(${background})`
-  }, [weather])
+  }, [charged])
 
   // console.log(weather.weather?.[0])
 
