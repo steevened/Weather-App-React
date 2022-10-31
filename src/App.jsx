@@ -43,7 +43,7 @@ function App() {
   }
 
   // document.body.style = 'background-image: url(src/assets/night2.svg)'
-  document.body.style = `background-image: url(./src/assets/${changeBackground(
+  document.body.style = `background-image: url(./assets/${changeBackground(
     weather.weather?.[0].icon
   )})`
 
