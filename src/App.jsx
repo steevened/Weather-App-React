@@ -10,12 +10,13 @@ import Card from './components/Card'
 import Weather from './components/Weather'
 import Degrees from './components/Degrees'
 import Spinner from './components/Spinner'
+import Background from './components/Background'
 
 function App() {
   //to work with the weather api
   const [weather, setWeather] = useState({})
   const [celsius, setCelsius] = useState(true)
-  const [background, setBackground] = useState()
+  const [background, setBackground] = useState('')
   const [charged, setCharged] = useState(true)
 
   useEffect(() => {
@@ -74,14 +75,14 @@ function App() {
     }
 
     setBackground(set(weather.weather?.[0].icon))
-
-    document.body.style = `background-image: url(${background})`
+    // document.body.style = `background-image: url(${background})`
   }, [charged])
 
   console.log(weather)
 
   return charged ? (
     <div className='app'>
+      <Background background={background} />
       <Hour />
       <div className='glass'>
         <Card>
