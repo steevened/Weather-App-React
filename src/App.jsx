@@ -41,14 +41,14 @@ function App() {
         icon === '10d' ||
         icon === '13d'
       ) {
-        return 'sun.png'
+        return 'https://i.ibb.co/G2TbMq3/sun.png'
       } else if (
         icon === '02d' ||
         icon === '04d' ||
         icon === '11d' ||
         icon === '50d'
       ) {
-        return 'sun2.svg'
+        return 'https://i.ibb.co/dc86t3s/sun2.png'
       } else if (
         icon === '01d' ||
         icon === '03n' ||
@@ -56,20 +56,25 @@ function App() {
         icon === '10n' ||
         icon === '13n'
       ) {
-        return 'night.svg'
+        return 'https://i.ibb.co/mJGMxrY/night.png'
       } else if (
         icon === '02n' ||
         icon === '04n' ||
         icon === '11n' ||
         icon === '50n'
       ) {
-        return 'night2.svg'
+        return 'https://i.ibb.co/jw5jt73/night2.png'
       }
     }
 
+    //     https://ibb.co/2M6pJXc
+    // https://ibb.co/4W75QwD
+    // https://ibb.co/59bvkzX
+    // https://ibb.co/k81WDt6
+
     setBackground(set(weather.weather?.[0].icon))
 
-    document.body.style = `background-image: url(/src/assets/${background})`
+    document.body.style = `background-image: url(${background})`
   }, [celsius])
 
   // console.log(weather.weather?.[0])
