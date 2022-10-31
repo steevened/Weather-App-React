@@ -9,6 +9,7 @@ import Hour from './components/Hour'
 import Card from './components/Card'
 import Weather from './components/Weather'
 import Degrees from './components/Degrees'
+import Spinner from './components/Spinner'
 
 function App() {
   //to work with the weather api
@@ -79,7 +80,7 @@ function App() {
 
   // console.log(weather.weather?.[0])
 
-  return (
+  return charged ? (
     <div className='app'>
       <Hour />
       <div className='glass'>
@@ -97,6 +98,8 @@ function App() {
       </div>
       <div className='moon'></div>
     </div>
+  ) : (
+    <Spinner />
   )
 }
 
