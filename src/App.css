@@ -30,6 +30,10 @@ li {
   list-style: none;
 }
 
+#root {
+  height: 100vh;
+}
+
 .app {
   height: 100vh;
   position: relative;
@@ -171,4 +175,11 @@ li {
   width: 15rem;
   text-align: center;
   color: #222;
+}
+
+.spinner {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -16,7 +16,7 @@ function App() {
   const [weather, setWeather] = useState({})
   const [celsius, setCelsius] = useState(true)
   const [background, setBackground] = useState()
-  const [charged, setCharged] = useState(false)
+  const [charged, setCharged] = useState(true)
 
   useEffect(() => {
     const success = (pos) => {
@@ -78,7 +78,7 @@ function App() {
     document.body.style = `background-image: url(${background})`
   }, [charged])
 
-  // console.log(weather.weather?.[0])
+  console.log(weather)
 
   return charged ? (
     <div className='app'>
