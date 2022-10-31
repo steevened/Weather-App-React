@@ -21,7 +21,7 @@ html {
 body {
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
-  background-image: url(./assets/nightSnow.svg);
+  background-image: url(./assets/sun2.svg);
   background-size: cover;
   color: #fff;
 }
@@ -51,9 +51,8 @@ li {
   animation-iteration-count: infinite, infinite;
   animation-play-state: running running;
   animation-delay: 0ms;
-  /* animation: hor 5s ease infinite; */
-  /* animation: ver 5s ease infinite; */
-  overflow: hidden;
+  z-index: -9;
+  display: none;
 }
 
 @keyframes hor {
@@ -162,4 +161,14 @@ li {
 .secondary ul li img {
   width: 2.5rem;
   margin-right: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  padding: 1rem 4rem;
+  width: 15rem;
+  text-align: center;
+  color: #222;
 }

@@ -3,9 +3,9 @@ import React from 'react'
 function ChangeDegrees({ setCelsius, celsius }) {
   return (
     <>
-      <button onClick={() => setCelsius(!celsius)}>
+      <div className='btn' onClick={() => setCelsius(!celsius)}>
         Change to {celsius ? '°F' : '°C'}
-      </button>
+      </div>
     </>
   )
 }

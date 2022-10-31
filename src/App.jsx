@@ -3,13 +3,11 @@ import './App.css'
 import { useEffect } from 'react'
 import axios from 'axios'
 import Location from './components/Location'
-
 import Secondary from './components/Secondary'
 import ChangeDegrees from './components/ChangeDegrees'
 import Mountains from './components/Mountains'
 import Hour from './components/Hour'
-import Background from './components/Background'
-import back from './assets/back.svg'
+
 import Card from './components/Card'
 import Weather from './components/Weather'
 import Degrees from './components/Degrees'
@@ -49,6 +47,7 @@ function App() {
             <Location weather={weather} celsius={celsius} />
             <Weather weather={weather} />
             <Degrees weather={weather} celsius={celsius} />
+            <ChangeDegrees setCelsius={setCelsius} celsius={celsius} />
           </div>
           <div className='secondary'>
             <Secondary weather={weather} />
